@@ -1,0 +1,43 @@
+# Solución práctica GIT
+- ¿Qué comando utilizaste en el paso 11? ¿Por qué?
+    - Lo hacemos en dos pasos:
+    - git reset HEAD~1
+    - git restore git-nuestro.md
+    - También se podría haber hecho utilizando:
+        - git reset --hard HEAD~1
+- ¿Qué comando o comandos utilizaste en el paso 12? ¿Por qué?
+    - git reflog para ver todo lo que ha pasado en el repositorio y ver el id del segundo commit.
+    - git reset bb4be4b
+    - Ahora el fichero nos aparece como modificado, tiene el contenido del primer commit, necesitamos descartar este cambio para recuperar el del segundo commit, el del reset.
+    - git restore git-nuestro.md
+- El merge del paso 13, ¿Causó algún conflicto? ¿Por qué?
+    - Ya está actualizado.
+    - No causó conflicto, el primer commit fue sobre master, después creamos styled, que contiene ese primer commit y sobre ese modificamos. Por lo tanto al intentar absorber a master, ya tenemos ese commit. No se produce ningún cambio.
+- El merge del paso 19, ¿Causó algún conflicto? ¿Por qué?
+    - Sí, existe conflicto. Ambas ramas parten de master, y por separado, se modifica el contenido en próximos commit de respectivas ramas. Creándose dos bifurcaciones. Al intentar integrarlo, se produce conflicto.
+- El merge del paso 21, ¿Causó algún conflicto? ¿Por qué?
+    - No. Styled, parte de master, contiene commit posteriores. Al integrar, los commit que traemos son posteriores al que contiene master. Por lo tanto no se crea nigún conflicto.
+- ¿Qué comando o comandos utilizaste en el paso 25?
+    - git log --graph
+- El merge del paso 26, ¿Podría ser fast forward? ¿Por qué?
+    - Sí, porque title se ha creado desde master, para añadir la línea de título en un commit posterior. Por lo tanto simplemente con mover el puntero sería suficiente.
+- ¿Qué comando o comandos utilizaste en el paso 27?
+    - git reset HEAD~1
+- ¿Qué comando o comandos utilizaste en el paso 28?
+    - git restore git-nuestro.md 
+- ¿Qué comando o comandos utilizaste en el paso 29?
+    - git branch -D title
+    - Eliminada la rama title (era 7a21a6d).
+- ¿Qué comando o comandos utilizaste en el paso 30?
+    - git reflog: Para ver toda la trazabilidad y el id del commit que queremos recuperar.
+    - Buscamos el commit del merge.
+    - git reset f84f264
+    - git restore git-nuestro.md
+- ¿Qué comando o comandos usaste en el paso 32?
+    - git reflog
+    - git reset 76b22b8
+    - git restore git-nuestro.md
+- ¿Qué comando o comandos usaste en el punto 33?
+    - git reset f84f264
+    - cat git-nuestro.md
+    - git restore git-nuestro.md
